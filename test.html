@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Parcel - Valentine's Day Gifts</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Background Decorations -->
+    <div class="bg-hearts">
+        <div class="floating-heart" style="left: 10%; top: 20%; font-size: 3rem;">❤️</div>
+        <div class="floating-heart" style="right: 15%; top: 40%; font-size: 2rem; animation-delay: 2s;">💕</div>
+        <div class="floating-heart" style="left: 20%; bottom: 30%; font-size: 2.5rem; animation-delay: 4s;">💝</div>
+        <div class="floating-heart" style="right: 25%; bottom: 15%; font-size: 3rem; animation-delay: 6s;">💖</div>
+        <div class="floating-heart" style="left: 50%; top: 10%; font-size: 2rem; animation-delay: 1s;">💗</div>
+        <div class="floating-heart" style="right: 40%; bottom: 40%; font-size: 2.5rem; animation-delay: 5s;">💓</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo" onclick="showPage('home')">
+                <div class="logo-icon">💝</div>
+                Love Parcel
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('categories')">Categories</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                <li>
+                    <div class="cart-icon" onclick="toggleCart()">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <div id="homePage" class="page-container active">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        <span class="small-text">—Happy—</span>
+                        Valentines day
+                    </h1>
+                    <p>Share this precious moment of love with a special someone. Let them know how much you care with
+                        our curated collection of heartfelt gifts.</p>
+                    <a href="#" class="cta-button" onclick="showPage('categories')">Shop Now</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-container">
+                        <img src="hero-image.png" alt="Romantic Couple in Field of Hearts - Valentine's Day">
+                    </div>
+                </div>
+            </div>
+            <div class="heart-decoration">💕</div>
+            <div class="heart-decoration">❤️</div>
+        </section>
+    </div>
+
+    <!-- Categories Page -->
+    <div id="categoriesPage" class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Our Categories</h1>
+            <p class="page-description">Choose from our lovely collection of Valentine's Day gifts</p>
+        </div>
+
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; max-width: 1400px; margin: 0 auto;">
+            <div class="product-card" onclick="showPage('bouquets')" style="cursor: pointer;">
+                <div class="product-image"><img src="bouqetlogo.jpg" alt=""></div>
+                <div class="product-info">
+                    <h3>Bouquets</h3>
+                    <p>Beautiful handcrafted flower arrangements that speak the language of love</p>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPage('teddy')" style="cursor: pointer;">
+                <div class="product-image"><img src="Teddyimagelogo.jpg" alt=""></div>
+                <div class="product-info">
+                    <h3>Soft Toys</h3>
+                    <p>Cuddly companions to keep your love close forever</p>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPage('hampers')" style="cursor: pointer;">
+                <div class="product-image"><img src="Gifthamperlogo.webp" alt=""></div>
+                <div class="product-info">
+                    <h3>Gift Hampers</h3>
+                    <p>Luxurious collections of treats and treasures for your special someone</p>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPage('cards')" style="cursor: pointer;">
+                <div class="product-image"><img src="valentinecardlogo.webp" alt=""></div>
+                <div class="product-info">
+                    <h3>Custom Cards</h3>
+                    <p>Personalized messages crafted just for your Valentine</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouquets Page -->
+    <div id="bouquetsPage" class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Bouquets</h1>
+            <p class="page-description">Beautiful handcrafted flower arrangements</p>
+        </div>
+        <div class="product-grid">
+            <!-- 1. Signature Rose Bouquet -->
+            <div class="product-card">
+                <div class="product-image"><img src="./Signature Rose.png" alt="Signature Rose Bouquet"></div>
+                <div class="product-info">
+                    <h3>Signature Rose Bouquet</h3>
+                    <p>Graceful, calming and truly eye-catching — our SkyBloom™ Blue Rose Signature Bouquet is crafted
+                        to leave a lasting impression. Featuring a stunning preserved-style blue rose, delicately
+                        accented with soft white fillers and wrapped in a premium matte cone wrap.</p>
+                    <div class="product-footer">
+                        <span class="price">₹110</span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Signature Rose Bouquet', 110, '💐')">Add
+                            to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Radiant Garden — FIXED: was missing event, wrong name & price -->
+            <div class="product-card">
+                <div class="product-image"><img src="Radiant-Garden.png" alt="Radiant Garden"></div>
+                <div class="product-info">
+                    <h3>Radiant Garden</h3>
+                    <p>Add colour, freshness and elegance to every celebration with our BloomAura™ Deluxe Mixed Rose
+                        Bouquet — a vibrant hand-tied arrangement of premium red roses, fresh white gerbera, soft
+                        seasonal blossoms and delicate baby's breath, beautifully layered in a stylish dual-tone mesh
+                        wrap.
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹399</span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Radiant Garden', 399, '🌹')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. TwinBloom #1 — FIXED: was missing event, wrong name & price -->
+            <div class="product-card">
+                <div class="product-image"><img src="TwinBloomRoses.png" alt="TwinBloom Roses"></div>
+                <div class="product-info">
+                    <h3>TwinBloom Roses & Gerbera Classic Bouquet</h3>
+                    <p>Bright, elegant and full of charm — the TwinBloom™ Rose & Gerbera Classic Bouquet is a perfect
+                        blend of romance and freshness.
+                        Featuring a premium red rose paired with a soft white gerbera, delicate baby's breath fillers
+                        and lush green foliage, this bouquet is designed to create a beautiful contrast that instantly
+                        stands out.
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹179</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'TwinBloom Roses & Gerbera Classic Bouquet', 179, '🌹')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. TwinBloom #2 — FIXED -->
+            <div class="product-card">
+                <div class="product-image"><img src="TwinBloomRoses1.png" alt="TwinBloom Roses 1"></div>
+                <div class="product-info">
+                    <h3>TwinBloom Roses & Gerbera Classic Bouquet</h3>
+                    <p>Bright, elegant and full of charm — the TwinBloom™ Rose & Gerbera Classic Bouquet is a perfect
+                        blend of romance and freshness.
+                        Featuring a premium red rose paired with a soft white gerbera, delicate baby's breath fillers
+                        and lush green foliage, this bouquet is designed to create a beautiful contrast that instantly
+                        stands out.
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹189</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'TwinBloom Roses & Gerbera Classic Bouquet (2)', 189, '🌹')">Add
+                            to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. TwinBloom #3 — FIXED -->
+            <div class="product-card">
+                <div class="product-image"><img src="TwinBloomRoses2.png" alt="TwinBloom Roses 2"></div>
+                <div class="product-info">
+                    <h3>TwinBloom Roses & Gerbera Classic Bouquet</h3>
+                    <p>Bright, elegant and full of charm — the TwinBloom™ Rose & Gerbera Classic Bouquet is a perfect
+                        blend of romance and freshness.
+                        Featuring a premium red rose paired with a soft white gerbera, delicate baby's breath fillers
+                        and lush green foliage, this bouquet is designed to create a beautiful contrast that instantly
+                        stands out.
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹179</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'TwinBloom Roses & Gerbera Classic Bouquet (3)', 179, '🌹')">Add
+                            to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. TwinBloom #4 — FIXED -->
+            <div class="product-card">
+                <div class="product-image"><img src="TwinBloomRoses3.png" alt="TwinBloom Roses 3"></div>
+                <div class="product-info">
+                    <h3>TwinBloom Roses & Gerbera Classic Bouquet</h3>
+                    <p>Bright, elegant and full of charm — the TwinBloom™ Rose & Gerbera Classic Bouquet is a perfect
+                        blend of romance and freshness.
+                        Featuring a premium red rose paired with a soft white gerbera, delicate baby's breath fillers
+                        and lush green foliage, this bouquet is designed to create a beautiful contrast that instantly
+                        stands out.
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹189</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'TwinBloom Roses & Gerbera Classic Bouquet (4)', 189, '🌹')">Add
+                            to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. RoseFest MultiBloom — FIXED -->
+            <div class="product-card">
+                <div class="product-image"><img src="RoseFest MultiBloom.png" alt="RoseFest MultiBloom"></div>
+                <div class="product-info">
+                    <h3>RoseFest MultiBloom Celebration Bouquet</h3>
+                    <p>Turn every special moment into a grand memory with our RoseFest™ Multi-Bloom Celebration Bouquet
+                        — a beautifully layered arrangement of premium red roses, fresh white gerbera and cheerful mixed
+                        fillers, wrapped in an elegant soft-mesh cone and finished with a cute heart-print ribbon.
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹499</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'RoseFest MultiBloom Celebration Bouquet', 499, '💐')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. HeartFold Rose Embrace — FIXED -->
+            <div class="product-card">
+                <div class="product-image"><img src="HeartFoldRoseEmbrace.png" alt="HeartFold Rose Embrace"></div>
+                <div class="product-info">
+                    <h3>HeartFold Rose Embrace Bouquet</h3>
+                    <p>Make every moment unforgettable with our HeartFold™ Rose Embrace Bouquet — a beautifully
+                        hand-crafted heart-shaped wrap that cradles a premium red rose, delicately paired with soft
+                        filler blooms for a luxurious and romantic finish.
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹119</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'HeartFold Rose Embrace Bouquet', 119, '💐')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. ChocoBloom Black (₹299) — FIXED -->
+            <div class="product-card">
+                <div class="product-image"><img src="ChocoBloom.png" alt="ChocoBloom"></div>
+                <div class="product-info">
+                    <h3>Choco Bloom-Rose and Chocolate Luxury Bouquet</h3>
+                    <p>A stylish black-wrapped bouquet featuring premium roses paired with KitKat chocolates for
+                        a bold and modern gifting look.
+                        <br>
+                        <b>✔ Pre-order only</b>
+                        <br>
+                        <b>✔ Custom chocolates and flower options available</b>
+                        <br>
+                        <b>✔ Price varies based on selected chocolates and flower count</b>
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹299</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Choco Bloom Bouquet (Black)', 299, '💐')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. ChocoBloom Red (₹799) — FIXED -->
+            <div class="product-card">
+                <div class="product-image"><img src="chochobloom2.jpeg" alt="ChocoBloom Red"></div>
+                <div class="product-info">
+                    <h3>Choco Bloom-Rose and Chocolate Luxury Bouquet</h3>
+                    <p>
+                        A romantic red-wrapped bouquet designed with roses and Dairy Milk Silk chocolates,
+                        finished with a luxurious ribbon bow perfect for love and celebrations.
+                        <br>
+                        <b>✔ Pre-order only</b>
+                        <br>
+                        <b>✔ Chocolate brand, flower type and quantity can be customised</b>
+                        <br>
+                        <b>✔ Price varies based on customisation selected</b>
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹799</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Choco Bloom Bouquet (Red)', 799, '💐')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. ChocoBloom Black-Gold (₹249) — FIXED: had 'event' as a string! -->
+            <div class="product-card">
+                <div class="product-image"><img src="chochobloom3.jpeg" alt="ChocoBloom Black Gold"></div>
+                <div class="product-info">
+                    <h3>Choco Bloom-Rose and Chocolate Luxury Bouquet</h3>
+                    <p>A premium black-gold themed bouquet featuring elegant roses paired with luxury chocolates
+                        such as Ferrero Rocher, Lindt and Godiva for an ultra-premium gifting experience.
+                        <br>
+                        <b>✔ Pre-order only</b>
+                        <br>
+                        <b>✔ Chocolates, flower type and flower quantity can be customised</b>
+                        <br>
+                        <b>✔ Price varies based on customisation selected</b>
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹249</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Choco Bloom Bouquet (Black-Gold)', 249, '💐')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. RoseFest 3 Roses — FIXED -->
+            <div class="product-card">
+                <div class="product-image"><img src="RoseFest 3 Roses.jpeg" alt="RoseFest 3 Roses"></div>
+                <div class="product-info">
+                    <h3>RoseFest 3 Roses Bouquet</h3>
+                    <p>Turn every special moment into a grand memory with our RoseFest™ Multi-Bloom Celebration Bouquet
+                        — a beautifully layered arrangement of premium red roses, fresh white gerbera and cheerful mixed
+                        fillers, wrapped in an elegant soft-mesh cone and finished with a cute heart-print ribbon.
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹399</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'RoseFest 3 Roses Bouquet', 399, '💐')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teddy Bears Page -->
+    <div id="teddyPage" class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Teddy Bears</h1>
+            <p class="page-description">Cuddly companions for your loved one</p>
+        </div>
+        <div class="product-grid">
+            <!-- 1. Purple Elephant — FIXED: missing event -->
+            <div class="product-card">
+                <div class="product-image"><img src="LavendarElephnat.jpeg" alt="Purple Elephant"></div>
+                <div class="product-info">
+                    <h3>Purple Elephant Soft Toy with Red Rose</h3>
+                    <p>A super-soft purple elephant holding a red rose perfect for gifting love, affection and warm
+                        Valentine feelings.</p>
+                    <div class="product-footer">
+                        <span class="price">₹280</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Purple Elephant Soft Toy with Red Rose', 1499, '🐻')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Green Elephant — FIXED: missing event + wrong name -->
+            <div class="product-card">
+                <div class="product-image"><img src="GreenHathi.jpeg" alt="Green Elephant"></div>
+                <div class="product-info">
+                    <h3>Green Elephant Soft Toy with Red Rose</h3>
+                    <p>A super-soft green elephant holding a red rose a beautiful Valentine gift to express love and
+                        care in the sweetest way.</p>
+                    <div class="product-footer">
+                        <span class="price">₹280</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Green Elephant Soft Toy with Red Rose', 899, '🐻')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Grey Penguin — FIXED: missing event + wrong name -->
+            <div class="product-card">
+                <div class="product-image"><img src="CutePenguinstand.jpeg" alt="Grey Penguin"></div>
+                <div class="product-info">
+                    <h3>Grey Penguin</h3>
+                    <p>A cute grey penguin softly made to express pure love and heartfelt Valentine emotions.</p>
+                    <div class="product-footer">
+                        <span class="price">₹300</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Grey Penguin Soft Toy with Red Rose', 599, '🐻')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Bunny — FIXED: missing event + wrong name -->
+            <div class="product-card">
+                <div class="product-image"><img src="PinkRabit.jpeg" alt="Bunny"></div>
+                <div class="product-info">
+                    <h3>Bunny Soft Toy with Red Rose (Long Ears Bunny)</h3>
+                    <p>A super-cute bunny soft toy holding a red rose perfect for expressing love, care and Valentine
+                        warmth.</p>
+                    <div class="product-footer">
+                        <span class="price">₹280</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Bunny Soft Toy with Red Rose', 1199, '🐻')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Penguin — FIXED: missing event + wrong name -->
+            <div class="product-card">
+                <div class="product-image"><img src="Blackandwhite Penguin.jpeg" alt="Penguin"></div>
+                <div class="product-info">
+                    <h3>Penguin Soft Toy Holding a Red Rose</h3>
+                    <p>An adorable penguin soft toy holding a red rose a sweet way to say "I love you" this Valentine.
+                    </p>
+                    <div class="product-footer">
+                        <span class="price">₹300</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Penguin Soft Toy Holding a Red Rose', 899, '🐻')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. White Bunny — FIXED: missing event + wrong name -->
+            <div class="product-card">
+                <div class="product-image"><img src="whiteRabit.jpeg" alt="White Bunny"></div>
+                <div class="product-info">
+                    <h3>White Bunny Soft Toy</h3>
+                    <p>A super-soft white cute bunny perfect for expressing love and making Valentine moments extra
+                        special.</p>
+                    <div class="product-footer">
+                        <span class="price">₹250</span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'White Bunny Soft Toy', 899, '🐻')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Strawberry Rabbit — FIXED: missing event -->
+            <div class="product-card">
+                <div class="product-image"><img src="StrawberryRabbit.jpeg" alt="Strawberry Rabbit"></div>
+                <div class="product-info">
+                    <h3>Strawberry Hug Bunny Convertible Soft Toy</h3>
+                    <p>
+                        A super-soft rabbit plush that cleverly folds inside a cute strawberry cover – perfect for
+                        sharing love and sweet Valentine cuddles.</p>
+                    <div class="product-footer">
+                        <span class="price">₹320</span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Couple Teddy Set', 899, '🐻')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Octopus — FIXED: missing event + wrong name -->
+            <div class="product-card">
+                <div class="product-image"><img src="octopus.jpeg" alt="Octopus"></div>
+                <div class="product-info">
+                    <h3>Reversible Octopus Mood Soft Toys</h3>
+                    <p>A super-soft octopus reversible octopus plush with two cute expression simply flip it show your
+                        valentine love in the sweetest way.</p>
+                    <div class="product-footer">
+                        <span class="price">₹220</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Double Octopus Love Soft Toy', 899, '🐻')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="greySleepypenguin.jpeg" alt="Octopus"></div>
+                <div class="product-info">
+                    <h3>Grey Sleepy Penguin</h3>
+                    <p>A cute grey penguin softly holding a red rose made to express pure love and heartfelt Valentine
+                        emotions.</p>
+                    <div class="product-footer">
+                        <span class="price">₹300</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Double Octopus Love Soft Toy', 899, '🐻')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gift Hampers Page -->
+    <div id="hampersPage" class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Gift Hampers</h1>
+            <p class="page-description">Luxurious collections of treats and treasures</p>
+        </div>
+        <div class="product-grid">
+            <!-- FIXED: all were missing event -->
+            <div class="product-card">
+                <div class="product-image">🎁</div>
+                <div class="product-info">
+                    <h3>Luxury Love Hamper</h3>
+                    <p>Chocolates, wine, and premium treats</p>
+                    <div class="product-footer">
+                        <span class="price">₹2,499</span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Luxury Love Hamper', 2499, '🎁')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🍫</div>
+                <div class="product-info">
+                    <h3>Sweet Treats Box</h3>
+                    <p>Assorted chocolates and candies</p>
+                    <div class="product-footer">
+                        <span class="price">₹699</span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Sweet Treats Box', 699, '🍫')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🎁</div>
+                <div class="product-info">
+                    <h3>Spa & Relax Hamper</h3>
+                    <p>Bath bombs, candles, and aromatics</p>
+                    <div class="product-footer">
+                        <span class="price">₹1,799</span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Spa &amp; Relax Hamper', 1799, '🎁')">Add
+                            to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🍷</div>
+                <div class="product-info">
+                    <h3>Romantic Evening Set</h3>
+                    <p>Wine, cheese, and gourmet snacks</p>
+                    <div class="product-footer">
+                        <span class="price">₹2,999</span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Romantic Evening Set', 2999, '🍷')">Add
+                            to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cards Page -->
+    <div id="cardsPage" class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Custom Cards</h1>
+            <p class="page-description">Personalized messages for your Valentine</p>
+        </div>
+        <div class="product-grid">
+            <!-- FIXED: all were missing event -->
+            <div class="product-card">
+                <div class="product-image"><img src="Valentinecard1.jpeg" alt=""></div>
+                <div class="product-info">
+                    <h3>Open My Heart- Handmade Valentine-Card</h3>
+                    <br>
+                    <div class="product-footer">
+                        <span class="price"><i>Contact for price.</i></span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Custom Love Letter', 199, '💌')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="Valentinecard2.jpeg" alt=""></div>
+                <div class="product-info">
+                    <h3>Our Story Frame- Personalize Valentine ScrapBook Card</h3>
+                    <br>
+                    <div class="product-footer">
+                        <span class="price"><i>Contact for price.</i></span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Photo Greeting Card', 299, '💝')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="Valentinecard3.jpeg" alt=""></div>
+                <div class="product-info">
+                    <h3>Forever Letter-Memory Keeping Valentine-Card</h3>
+                    <br>
+                    <div class="product-footer">
+                        <span class="price"><i>Contact for price.</i></span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Premium Handmade Card', 399, '💌')">Add
+                            to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="Valentinecard4.jpeg" alt=""></div>
+                <div class="product-info">
+                    <h3>Little Love Notes</h3>
+                    <br>
+                    <div class="product-footer">
+                        <span class="price"><i>Contact for price.</i></span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Pop-Up Love Card', 349, '💝')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="Valentinecard5.jpeg" alt=""></div>
+                <div class="product-info">
+                    <h3>Love in Melody- Handpainted Valentine Card</h3>
+                    <br>
+                    <div class="product-footer">
+                        <span class="price"><i>Contact for price.</i></span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Pop-Up Love Card', 349, '💝')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="Valentinecard6.jpeg" alt=""></div>
+                <div class="product-info">
+                    <h3>Hearts in Bloom - Handmade Valentine Card</h3>
+                    <br>
+                    <div class="product-footer">
+                        <span class="price"><i>Contact for price.</i></span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Pop-Up Love Card', 349, '💝')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="Valentinecard7.jpeg" alt=""></div>
+                <div class="product-info">
+                    <h3>Our Journey Together- Personalize Memory Valentine-Card</h3>
+                    <br>
+                    <div class="product-footer">
+                        <span class="price"><i>Contact for price.</i></span>
+                        <button class="add-to-cart" onclick="addToCart(event, 'Pop-Up Love Card', 349, '💝')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contactPage" class="page-container">
+        <section class="contact">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>We're here to help you spread love! Reach out to us for custom orders, bulk purchases, or any
+                        questions about our products.</p>
+                </div>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i>📱</i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+91 6205719857</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i>📧</i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>prashantranjan201@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i>📍</i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Pondicherry University , Chinna Kalapet</p>
+                            <p>Puducherry, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i>⏰</i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>24 hours working time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-total" id="cartTotal" style="display: none;">
+            <h3>
+                <span>Total:</span>
+                <span id="totalPrice">₹0</span>
+            </h3>
+            <button class="checkout-button" onclick="checkout()">Checkout via WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ by Love Parcel | Spreading Love Since 2025</p>
+        <p>© 2025 Love Parcel. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
