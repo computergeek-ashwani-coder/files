@@ -120,12 +120,12 @@ function checkout() {
         return;
     }
 
-    let message = '🛍️ *New Valentine Order* %0A%0A';
+    let message = '🛍️ *New Valentine Order* \n\n';
 
     cart.forEach((item, index) => {
-        message += `${index + 1}. ${item.name}%0A`;
-        message += `   Quantity: ${item.quantity}%0A`;
-        message += `   Price: ${item.price === 0 ? 'Contact for price' : '₹' + item.price}%0A%0A`;
+        message += `${index + 1}. ${item.name}\n`;
+        message += `   Quantity: ${item.quantity}\n`;
+        message += `   Price: ${item.price === 0 ? 'Contact for price' : '₹' + item.price}\n\n`;
     });
 
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -134,7 +134,8 @@ function checkout() {
     // 🔴 Replace with your WhatsApp number
     const phoneNumber = '916205719857';
 
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(whatsappURL, '_blank');
 }
 
@@ -199,4 +200,3 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 });
-
