@@ -56,6 +56,31 @@ function getPriceFromCard(button) {
 function addToCart(event, name, price, icon) {
     event.stopPropagation();
 
+    const button = event.target;
+    const card = button.closest('.product-card');
+    const isHamper = !!(card && card.closest('#hampersPage'));
+
+    // If the item is from Gift Hampers, forward details to WhatsApp immediately
+    if (isHamper) {
+        const priceText = (card && card.querySelector('.price'))
+            ? (card.querySelector('.price').textContent || '').trim()
+            : '';
+
+        let hamperMessage = 'ðŸŽ *Gift Hamper Inquiry* \n\n';
+        hamperMessage += `Item: ${name}\n`;
+        if (priceText) {
+            hamperMessage += `Price: ${priceText}\n`;
+        }
+        hamperMessage += '\nPlease share customization options and final pricing.';
+
+        // ðŸ”´ Replace with your WhatsApp number
+        const phoneNumber = '916205719857';
+        const encodedMessage = encodeURIComponent(hamperMessage);
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappURL, '_blank');
+        return;
+    }
+
     const resolvedPrice = (typeof price === 'number' && price > 0)
         ? price
         : getPriceFromCard(event.target);
@@ -73,7 +98,6 @@ function addToCart(event, name, price, icon) {
 
     updateCart();
 
-    const button = event.target;
     const originalText = button.textContent;
     const originalBg = button.style.background;
 
