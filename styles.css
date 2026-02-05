@@ -515,6 +515,59 @@ nav {
     gap: 2.5rem;
 }
 
+.hamper-feature {
+    max-width: 1400px;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.hamper-image-box {
+    height: 520px;
+    border-radius: 24px;
+    background: linear-gradient(160deg, #fff0f3 0%, #ffe4ea 100%);
+    box-shadow: 0 18px 50px rgba(231, 76, 115, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hamper-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.hamper-card {
+    display: flex;
+    align-items: center;
+}
+
+.hamper-card .product-info {
+    padding: 2rem;
+}
+
+.hamper-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+.hamper-card p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.hamper-grid {
+    margin-top: 1rem;
+}
+
 .product-card {
     background: white;
     border-radius: 20px;
@@ -1054,6 +1107,14 @@ footer p {
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 2rem;
+    }
+
+    .hamper-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .hamper-image-box {
+        height: 420px;
     }
 }
 
