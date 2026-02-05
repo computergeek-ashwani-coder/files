@@ -41,15 +41,34 @@ function toggleCart() {
     sidebar.classList.toggle('active');
 }
 
+function getPriceFromCard(button) {
+    if (!button) return 0;
+    const card = button.closest('.product-card');
+    if (!card) return 0;
+    const priceEl = card.querySelector('.price');
+    if (!priceEl) return 0;
+
+    const text = priceEl.textContent || '';
+    const match = text.replace(/,/g, '').match(/(\d+(\.\d+)?)/);
+    return match ? Number(match[1]) : 0;
+}
+
 function addToCart(event, name, price, icon) {
     event.stopPropagation();
+
+    const resolvedPrice = (typeof price === 'number' && price > 0)
+        ? price
+        : getPriceFromCard(event.target);
 
     const existingItem = cart.find(item => item.name === name);
 
     if (existingItem) {
         existingItem.quantity++;
+        if (existingItem.price === 0 && resolvedPrice > 0) {
+            existingItem.price = resolvedPrice;
+        }
     } else {
-        cart.push({ name, price, icon, quantity: 1 });
+        cart.push({ name, price: resolvedPrice, icon, quantity: 1 });
     }
 
     updateCart();
