@@ -10,6 +10,7 @@ function showPage(page) {
     const pageMap = {
         'home': 'homePage',
         'categories': 'categoriesPage',
+        'singleroses': 'singleRosesPage',
         'bouquets': 'bouquetsPage',
         'teddy': 'teddyPage',
         'hampers': 'hampersPage',

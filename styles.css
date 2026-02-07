@@ -330,6 +330,10 @@ nav {
 
 .hero-image {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
     animation: slideInRight 1.2s ease 0.3s backwards;
 }
 
@@ -347,6 +351,7 @@ nav {
 
 .hero-image-container {
     position: relative;
+    width: 100%;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 25px 70px rgba(231, 76, 115, 0.4);
@@ -400,6 +405,91 @@ nav {
             rgba(230, 201, 230, 0.15) 100%);
     pointer-events: none;
     animation: shimmerOverlay 3s ease-in-out infinite;
+}
+
+.sale-alert {
+    position: relative;
+    align-self: flex-end;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 300px;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.sale-burst {
+    position: relative;
+    width: 220px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background: linear-gradient(135deg, #ff3b4f, #e3002f);
+    border: 3px solid #ffe6ea;
+    box-shadow: 0 14px 30px rgba(231, 76, 115, 0.25);
+    clip-path: polygon(50% 0%, 62% 8%, 75% 2%, 82% 14%, 96% 18%, 88% 32%, 100% 45%, 88% 52%, 96% 68%, 82% 72%, 75% 88%, 62% 82%, 50% 100%, 38% 82%, 25% 88%, 18% 72%, 4% 68%, 12% 52%, 0% 45%, 12% 32%, 4% 18%, 18% 14%, 25% 2%, 38% 8%);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sale-burst::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border-radius: 40%;
+    background:
+        radial-gradient(circle, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px) 0 0 / 14px 14px,
+        radial-gradient(circle, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px) 7px 7px / 14px 14px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.sale-kicker {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffe6ea;
+    z-index: 1;
+}
+
+.sale-main {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff7f9;
+    z-index: 1;
+}
+
+.sale-tag {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff7f9;
+    color: #e3002f;
+    font-size: 1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(231, 76, 115, 0.35);
+}
+
+.sale-alert p {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(231, 76, 115, 0.2);
+    padding: 0.7rem 0.9rem;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #5b2b3a;
+    box-shadow: 0 10px 25px rgba(231, 76, 115, 0.15);
 }
 
 @keyframes shimmerOverlay {
@@ -1091,6 +1181,16 @@ footer p {
         font-size: 1.1rem;
     }
 
+    .sale-alert {
+        align-self: center;
+        max-width: 260px;
+    }
+
+    .sale-burst {
+        width: 190px;
+        height: 130px;
+    }
+
     .contact-content {
         grid-template-columns: 1fr;
     }
@@ -1139,5 +1239,14 @@ footer p {
     .cta-button {
         padding: 1rem 2.5rem;
         font-size: 1rem;
+    }
+
+    .sale-alert {
+        margin-bottom: 1rem;
+    }
+
+    .sale-burst {
+        width: 170px;
+        height: 120px;
     }
 }

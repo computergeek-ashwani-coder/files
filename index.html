@@ -58,6 +58,13 @@
                     <a href="#" class="cta-button" onclick="showPage('categories')">Shop Now</a>
                 </div>
                 <div class="hero-image">
+                    <div class="sale-alert" aria-live="polite">
+                        <div class="sale-burst">
+                            <span class="sale-kicker">Rose</span>
+                            <span class="sale-main">Day</span>
+                        </div>
+                        <p>Single Roses available for the Rose day.. contact us.</p>
+                    </div>
                     <div class="hero-image-container">
                         <img src="hero-image.png" alt="Romantic Couple in Field of Hearts - Valentine's Day">
                     </div>
@@ -84,6 +91,13 @@
                     <p>Beautiful handcrafted flower arrangements that speak the language of love</p>
                 </div>
             </div>
+            <div class="product-card" onclick="showPage('singleroses')" style="cursor: pointer;">
+                <div class="product-image"><img src="Singleroses1.png.jpeg" alt=""></div>
+                <div class="product-info">
+                    <h3>Single Roses</h3>
+                    <p>Elegant single-stem roses for sweet, simple moments</p>
+                </div>
+            </div>
             <div class="product-card" onclick="showPage('teddy')" style="cursor: pointer;">
                 <div class="product-image"><img src="Teddyimagelogo.jpg" alt=""></div>
                 <div class="product-info">
@@ -103,6 +117,66 @@
                 <div class="product-info">
                     <h3>Custom Cards</h3>
                     <p>Personalized messages crafted just for your Valentine</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Single Roses Page -->
+    <div id="singleRosesPage" class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Single Roses</h1>
+            <p class="page-description">Classic single-stem roses for Rose Day</p>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image"><img src="Singleroses1.png.jpeg" alt="Velvet Red Single Rose"></div>
+                <div class="product-info">
+                    <h3> Red Single Rose</h3>
+                    <p>Deep red single rose for Expressing your Love for your someone special.</p>
+                    <div class="product-footer">
+                        <span class="price">₹60</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, ' Red Single Rose', 60, '🌹')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="Singlerosewithorange.jpeg" alt="Rose Day Single Rose"></div>
+                <div class="product-info">
+                    <h3>Single Rose with Orange Chrysanthemum</h3>
+                    <p>Single premium rose with Orange Chrysanthemum for Rose Day surprise.</p>
+                    <div class="product-footer">
+                        <span class="price">₹70</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Single Rose with Orange Chrysanthemum', 70, '🌹')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="singlerosewithvoilet.jpeg" alt="Rose Day Single Rose"></div>
+                <div class="product-info">
+                    <h3>Single Rose with voilet Chrysanthemum</h3>
+                    <p>Single premium rose with Voilet Chrysanthemum for Rose Day surprise.</p>
+                    <div class="product-footer">
+                        <span class="price">₹70</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Single Rose with voilet Chrysanthemum', 70, '🌹')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="singleroseswithtwoaddon.jpeg" alt="Classic Red Rose"></div>
+                <div class="product-info">
+                    <h3>Classic Red Rose with Orange Orange Chrysanthemum and Voilet Chrysanthemum</h3>
+                    <p>A timeless single red rose with Orange Chrysanthemum and Voilet Chrysanthemum for a gentle romantic touch.</p>
+                    <div class="product-footer">
+                        <span class="price">₹80</span>
+                        <button class="add-to-cart"
+                            onclick="addToCart(event, 'Classic Red Rose with Orange Orange Chrysanthemum and Voilet Chrysanthemum', 80, '🌹')">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -257,7 +331,7 @@
                         filler blooms for a luxurious and romantic finish.
                     </p>
                     <div class="product-footer">
-                        <span class="price">₹199</span>
+                        <span class="price">₹149</span>
                         <button class="add-to-cart"
                             onclick="addToCart(event, 'HeartFold Rose Embrace Bouquet', 119, '💐')">Add to Cart</button>
                     </div>
