@@ -898,6 +898,14 @@ nav {
     box-shadow: 0 5px 15px rgba(231, 76, 115, 0.4);
 }
 
+.add-to-cart:disabled {
+    background: #b9b0b6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.8;
+}
+
 /* Contact Section */
 .contact {
     padding: 5rem 5%;
